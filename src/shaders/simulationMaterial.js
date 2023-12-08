@@ -1,6 +1,6 @@
-import * as THREE from 'three'
 import { extend } from '@react-three/fiber'
 import glsl from 'babel-plugin-glsl/macro'
+import * as THREE from 'three'
 
 function getPoint(v, size, data, offset) {
     v.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)

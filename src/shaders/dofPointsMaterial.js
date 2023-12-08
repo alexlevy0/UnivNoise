@@ -1,5 +1,5 @@
-import * as THREE from 'three'
 import { extend } from '@react-three/fiber'
+import * as THREE from 'three'
 
 class DofPointsMaterial extends THREE.ShaderMaterial {
     constructor() {

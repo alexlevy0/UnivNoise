@@ -1,21 +1,36 @@
-import * as THREE from 'three'
-import { useMemo, useState, useRef } from 'react'
-import { createPortal, useFrame } from '@react-three/fiber'
 import { useFBO } from '@react-three/drei'
-import './shaders/simulationMaterial'
+import { createPortal, useFrame } from '@react-three/fiber'
+import { useMemo, useRef, useState } from 'react'
+import * as THREE from 'three'
 import './shaders/dofPointsMaterial'
+import './shaders/simulationMaterial'
 
-export function Particles({ renderRef, speed, fov, aperture, focus, curl, size = 512, ...props }) {
+export function Particles({
+    renderRef,
+    speed,
+    fov,
+    aperture,
+    focus,
+    curl,
+    size = 512,
+    ...props
+}) {
     const simRef = useRef()
     // Set up FBO
     const [scene] = useState(() => new THREE.Scene())
     const [camera] = useState(
-        () => new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1),
+        () =>
+            new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1),
     )
     const [positions] = useState(
-        () => new Float32Array([-1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0]),
+        () =>
+            new Float32Array([
+                -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0,
+            ]),
     )
-    const [uvs] = useState(() => new Float32Array([0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]))
+    const [uvs] = useState(
+        () => new Float32Array([0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]),
+    )
     const target = useFBO(size, size, {
         minFilter: THREE.NearestFilter,
         magFilter: THREE.NearestFilter,

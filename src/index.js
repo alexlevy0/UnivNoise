@@ -1,7 +1,7 @@
+import { events, extend, render } from '@react-three/fiber'
 import * as THREE from 'three'
-import { render, events, extend } from '@react-three/fiber'
-import './styles.css'
 import App from './App'
+import './styles.css'
 
 extend(THREE)
 
