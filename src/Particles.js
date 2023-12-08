@@ -5,9 +5,8 @@ import { useFBO } from '@react-three/drei'
 import './shaders/simulationMaterial'
 import './shaders/dofPointsMaterial'
 
-export function Particles({ speed, fov, aperture, focus, curl, size = 512, ...props }) {
+export function Particles({ renderRef, speed, fov, aperture, focus, curl, size = 512, ...props }) {
     const simRef = useRef()
-    const renderRef = useRef()
     // Set up FBO
     const [scene] = useState(() => new THREE.Scene())
     const [camera] = useState(
@@ -60,7 +59,7 @@ export function Particles({ speed, fov, aperture, focus, curl, size = 512, ...pr
         simRef.current.uniforms.uTime.value = state.clock.elapsedTime * speed
         simRef.current.uniforms.uCurlFreq.value = THREE.MathUtils.lerp(
             simRef.current.uniforms.uCurlFreq.value,
-            curl,
+            renderRef.current.uniforms.audioMooves.value,
             0.1,
         )
     })
