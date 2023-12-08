@@ -5,19 +5,19 @@ import App from './App'
 
 extend(THREE)
 
-window.addEventListener('resize', () =>
-  render(<App />, document.querySelector('canvas'), {
-    events,
-    linear: true,
-    camera: { fov: 25, position: [0, 0, 6] },
-    gl: new THREE.WebGLRenderer({
-      canvas: document.querySelector('canvas'),
-      antialias: true,
-      alpha: true
-    })
-  })
+const canvas = document.querySelector('canvas')
+
+addEventListener('resize', () =>
+    render(<App />, canvas, {
+        events,
+        linear: true,
+        camera: { fov: 25, position: [0, 0, 6] },
+        gl: new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true,
+            alpha: true,
+        }),
+    }),
 )
 
-window.dispatchEvent(new Event('resize'))
-
-setTimeout(() => window.dispatchEvent(new Event('resize')), 10)
+setTimeout(() => dispatchEvent(new Event('resize')), 0)
