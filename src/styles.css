@@ -23,6 +23,10 @@ canvas {
 	height: 100%;
 }
 
-#leva__root {
+#leva__root>div>div.leva-c-hwBXYF.leva-c-hwBXYF-kbKHjH-mode-drag {
 	display: none;
 }
+
+/* #leva__root {
+	display: none;
+} */
