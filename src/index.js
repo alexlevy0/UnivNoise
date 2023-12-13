@@ -5,6 +5,8 @@ import './styles.css'
 
 extend(THREE)
 
+THREE.Cache.enabled = true
+
 const canvas = document.querySelector('canvas')
 
 const gl = new THREE.WebGLRenderer({

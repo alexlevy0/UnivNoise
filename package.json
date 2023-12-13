@@ -3,6 +3,11 @@
     "version": "0.0.1",
     "description": "",
     "main": "src/index.js",
+    "scripts": {
+        "analyze": "source-map-explorer 'build/static/js/*.js'",
+        "start": "react-scripts start",
+        "build": "react-scripts build"
+    },
     "dependencies": {
         "@babel/core": "^7.15.5",
         "@react-three/drei": "^9.90.1",
@@ -31,11 +36,6 @@
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
         "eslint": "^8.55.0",
         "eslint-plugin-react": "^7.33.2"
-    },
-    "scripts": {
-        "analyze": "source-map-explorer 'build/static/js/*.js'",
-        "start": "react-scripts start",
-        "build": "react-scripts build"
     },
     "browserslist": {
         "production": [
