@@ -1,32 +1,36 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	background: #000000;
+    background: #000000;
 }
 
 canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-#leva__root>div>div.leva-c-hwBXYF.leva-c-hwBXYF-kbKHjH-mode-drag {
-	display: none;
+#leva__root > div > div.leva-c-hwBXYF.leva-c-hwBXYF-kbKHjH-mode-drag {
+    display: none;
 }
 
 /* #leva__root {
-	display: none;
+    display: none;
 } */
+
+.leva-c-dmsJDs-hXSjjU-isRoot-true > .leva-c-PJLV:not(:first-of-type) {
+    margin-top: 0;
+}
