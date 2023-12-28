@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react'
 import { useControls } from 'leva'
 import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
+import { DragAndDrop } from './DragAndDrop'
 import { Particles } from './Particles'
 
 export default function App() {
